@@ -4,6 +4,10 @@ import "./index.css";
 
 import Cookies from "js-cookie"
 
+
+
+
+
 class Login extends Component {
 
     state={register:false,username:"",password:"",newUserName:"",newUserPassword:"",confirmPassword:"",role:"Teacher",errorMessage:"",errorMessageRegister:""}
@@ -149,6 +153,7 @@ changeTheRoles=(e)=>{
 
     render() {
         const {register,username,password,confirmPassword,errorMessage,newUserName,newUserPassword,errorMessageRegister}=this.state
+      
         return (
             <div className="login-and-register">
              

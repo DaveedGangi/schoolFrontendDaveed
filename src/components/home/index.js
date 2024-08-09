@@ -153,15 +153,16 @@ addStudentMarks=(event)=>{
 
     render(){
         const {show,home,addTeacher,addStudent,teacherName,teacherAge,teacherExperience,teacherGender,teacherSubject,studentName,studentAge,studentGender,studentMarks,studentStandard}=this.state
-        const jwt=Cookies.get("jwtToken")
-        const {username,role}=JSON.parse(localStorage.getItem("user"))
-        console.log(role)
-
-        if(jwt===undefined){
-            return(
-                <Redirect to="/login" />
-            )
-        }
+      const userDetails=JSON.parse(localStorage.getItem("user"))
+      console.log("userDetails",userDetails);
+      const {username,role}=userDetails
+      console.log("username",username)
+      console.log("role",role)
+       const jwtToken=Cookies.get("jwtToken")
+       if(jwtToken===undefined){
+        return <Redirect to="/login"/>
+       }
+       
         return(
             <div>
 
